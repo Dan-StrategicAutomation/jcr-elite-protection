@@ -1,0 +1,309 @@
+/* WCAG 2.2 AA Accessibility Styles */
+
+/* High Contrast Mode - Variables now centralized in src/styles/variables.ts */
+.high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --primary: 240 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 10%;
+  --accent: 240 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 20%;
+  --input: 0 0% 100%;
+  --ring: 240 100% 50%;
+}
+
+.high-contrast * {
+  border-color: hsl(var(--border)) !important;
+}
+
+.high-contrast .text-muted-foreground {
+  color: hsl(var(--foreground)) !important;
+}
+
+.high-contrast .bg-gray-50 {
+  background-color: hsl(var(--background)) !important;
+}
+
+.high-contrast .bg-white {
+  background-color: hsl(var(--background)) !important;
+  border: 2px solid hsl(var(--border)) !important;
+}
+
+/* Font Size Adjustments */
+.font-large {
+  font-size: 1.125rem; /* 18px base instead of 16px */
+}
+
+.font-large h1 {
+  font-size: 3.375rem; /* Increased from 3rem */
+}
+
+.font-large h2 {
+  font-size: 2.25rem; /* Increased from 2rem */
+}
+
+.font-large h3 {
+  font-size: 1.875rem; /* Increased from 1.5rem */
+}
+
+.font-large .text-sm {
+  font-size: 1rem; /* Increased from 0.875rem */
+}
+
+.font-extra-large {
+  font-size: 1.25rem; /* 20px base */
+}
+
+.font-extra-large h1 {
+  font-size: 3.75rem; /* Further increased */
+}
+
+.font-extra-large h2 {
+  font-size: 2.5rem; /* Further increased */
+}
+
+.font-extra-large h3 {
+  font-size: 2rem; /* Further increased */
+}
+
+.font-extra-large .text-sm {
+  font-size: 1.125rem; /* Further increased */
+}
+
+/* Reduced Motion */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Focus Indicators - WCAG 2.2 AA Compliance */
+*:focus {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid hsl(var(--primary));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px hsl(var(--background));
+}
+
+/* Minimum touch target size - WCAG 2.2 AA */
+button,
+a,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+[role="button"],
+[tabindex="0"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure text has sufficient contrast */
+.text-muted-foreground {
+  color: hsl(220deg 8.9% 46.1%); /* Improved contrast ratio */
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 6px;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Fix Radix UI focus guards - ensure they're not focusable */
+[data-radix-focus-guard] {
+  pointer-events: none;
+  position: fixed;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  top: -100px;
+  left: -100px;
+}
+
+/* Ensure aria-hidden elements are not focusable */
+[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+[aria-hidden="true"] * {
+  pointer-events: none;
+}
+
+/* Error states with better contrast */
+.error {
+  color: hsl(0deg 84.2% 60.2%);
+  border-color: hsl(0deg 84.2% 60.2%);
+}
+
+.error:focus {
+  outline-color: hsl(0deg 84.2% 60.2%);
+}
+
+/* Success states */
+.success {
+  color: hsl(142.1deg 76.2% 36.3%);
+  border-color: hsl(142.1deg 76.2% 36.3%);
+}
+
+/* Warning states */
+.warning {
+  color: hsl(47.9deg 95.8% 53.1%);
+  border-color: hsl(47.9deg 95.8% 53.1%);
+}
+
+/* Improved link visibility - only when accessibility underlines are enabled */
+.enhanced-links a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.enhanced-links a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Keep navigation and UI elements clean even with enhanced links */
+.enhanced-links nav a,
+.enhanced-links .mobile-menu a,
+.enhanced-links .mobile-menu-content a,
+.enhanced-links .no-underline,
+.enhanced-links button a,
+.enhanced-links .button-primary,
+.enhanced-links .button-secondary,
+.enhanced-links [role="button"] a {
+  text-decoration: none !important;
+}
+
+/* Form improvements */
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input[required]::after,
+textarea[required]::after,
+select[required]::after {
+  content: " *";
+  color: hsl(0deg 84.2% 60.2%);
+}
+
+/* Loading states */
+[aria-busy="true"] {
+  cursor: wait;
+}
+
+/* Disabled states */
+[disabled],
+[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Live regions */
+[aria-live] {
+  position: relative;
+}
+
+/* Improved table accessibility */
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  background-color: hsl(var(--muted));
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid hsl(var(--border));
+}
+
+/* Mobile accessibility improvements */
+@media (width <= 768px) {
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  [tabindex="0"] {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* Print accessibility */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+  }
+
+  a[href^="#"]::after {
+    content: "";
+  }
+}

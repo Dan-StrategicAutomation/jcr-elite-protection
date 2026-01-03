@@ -1,0 +1,45 @@
+
+> vite_react_shadcn_ts@0.0.0 build
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+▲ Next.js 16.1.1 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+✓ Compiled successfully in 39.5s
+  Skipping validation of types
+  Collecting page data using 15 workers ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+  Generating static pages using 15 workers (0/37) ...
+  Generating static pages using 15 workers (9/37) 
+⨯ useSearchParams() should be wrapped in a suspense boundary at page "/". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at Q (/media/haylerd/External/secureprofilehub/.next/server/chunks/ssr/node_modules_next_920e7746._.js:2:2111)
+    at o (/media/haylerd/External/secureprofilehub/.next/server/chunks/ssr/node_modules_next_920e7746._.js:4:5284)
+    at /media/haylerd/External/secureprofilehub/.next/server/chunks/ssr/[root-of-the-server]__8635e9d4._.js:1:21998
+    at an (/media/haylerd/External/secureprofilehub/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:84360)
+    at ai (/media/haylerd/External/secureprofilehub/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:86179)
+    at al (/media/haylerd/External/secureprofilehub/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:107953)
+    at as (/media/haylerd/External/secureprofilehub/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:105368)
+    at aa (/media/haylerd/External/secureprofilehub/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:84712)
+    at ai (/media/haylerd/External/secureprofilehub/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:86228)
+    at ai (/media/haylerd/External/secureprofilehub/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.prod.js:2:104708)
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /page: /, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null

@@ -1,0 +1,548 @@
+/* Mobile-First Optimization Styles */
+
+/* CSS Custom Properties now centralized in src/styles/variables.ts */
+
+/* Mobile Viewport Optimization */
+.mobile-optimized {
+  min-height: calc(var(--vh, 1vh) * 100);
+  padding: var(--safe-area-top) var(--safe-area-right) var(--safe-area-bottom) var(--safe-area-left);
+}
+
+/* Touch Target Optimization */
+@media (width <= 768px) {
+  /* Ensure all interactive elements meet touch target requirements */
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  [tabindex="0"] {
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    padding: 12px 16px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Specific fixes for small interactive elements */
+
+  /* Navbar dropdown buttons */
+  .dropdown-container button {
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    padding: 12px 16px;
+  }
+
+  /* Social media icons in footer */
+  footer a[aria-label*="Visit"] {
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Footer links */
+  footer ul li a {
+    min-height: var(--touch-target-comfortable);
+    padding: 12px 8px;
+    display: block;
+  }
+
+  /* Service card links */
+  .service-card a {
+    min-height: var(--touch-target-comfortable);
+    padding: 12px 8px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Scroll to top button */
+  footer button[aria-label="Scroll to top"] {
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    padding: 14px;
+  }
+
+  /* Mobile menu close button */
+  #mobile-menu-close {
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    padding: 12px;
+  }
+
+  /* Hero buttons */
+  .hero-button {
+    min-height: var(--touch-target-comfortable);
+    padding: 14px 20px;
+  }
+
+  /* Dropdown menu items */
+  .dropdown-menu a {
+    min-height: var(--touch-target-comfortable);
+    padding: 12px 16px;
+    display: block;
+  }
+
+  /* Badge/tag elements that might be clickable */
+  .badge,
+  .tag,
+  [role="button"] {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+    padding: 8px 12px;
+  }
+
+  /* Ensure icons within buttons have proper spacing */
+  button svg,
+  a svg {
+    margin: 2px;
+  }
+
+  /* Logo links */
+  nav a[class*="logo"],
+  .mobile-menu-header a {
+    min-height: var(--touch-target-comfortable);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Mobile navigation optimizations */
+  .nav-link {
+    padding: 16px 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Mobile form optimizations */
+  input,
+  textarea,
+  select {
+    font-size: var(--mobile-font-base); /* Prevents zoom on iOS */
+    padding: 16px 12px;
+    border-radius: 8px;
+    line-height: var(--mobile-line-height);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Mobile typography */
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 0.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: var(--mobile-font-base);
+    line-height: var(--mobile-line-height);
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile spacing */
+  .section-container {
+    padding: 2rem var(--mobile-padding);
+  }
+
+  .container {
+    padding-left: var(--mobile-padding);
+    padding-right: var(--mobile-padding);
+  }
+}
+
+/* Touch Interaction Optimizations */
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Active state feedback for touch */
+button:active,
+a:active,
+[role="button"]:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Mobile Menu Optimizations */
+@media (width <= 768px) {
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgb(0 0 0 / 70%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .mobile-menu-content {
+    height: 100%;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    background: white;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-menu-header {
+    padding: 1rem;
+    border-bottom: 1px solid hsl(var(--border));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+  }
+
+  .mobile-menu-items {
+    padding: 1.5rem 1rem;
+  }
+
+  .mobile-menu-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  .mobile-menu-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Mobile Hero Section Optimizations */
+@media (width <= 768px) {
+  .hero-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: -webkit-fill-available; /* iOS Safari fix */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative;
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: 100vh;
+    height: 100dvh;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available; /* iOS Safari fix */
+    overflow-x: hidden !important;
+
+    /* Prevent any horizontal scrolling */
+    box-sizing: border-box;
+  }
+
+  /* Ensure background covers full mobile viewport */
+  .hero-container > div:first-child {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Mobile hero content positioning */
+  .hero-container > div:nth-child(2) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100dvh - 4rem);
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-button {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+/* Mobile Card Optimizations */
+@media (width <= 768px) {
+  .service-card,
+  .testimonial-card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile Performance Optimizations */
+@media (width <= 768px) {
+  /* Reduce motion for better performance */
+  .reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Mobile-specific loading states */
+  .mobile-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    font-size: 1rem;
+    color: hsl(var(--muted-foreground));
+  }
+}
+
+/* iOS Safari Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Fix iOS Safari viewport issues */
+  .mobile-optimized {
+    min-height: -webkit-fill-available;
+  }
+
+  /* Fix iOS Safari input zoom */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Fix iOS Safari button styling */
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 8px;
+  }
+}
+
+/* Android Chrome Specific Fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Fix Android Chrome address bar behavior */
+  .mobile-optimized {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+/* Mobile Hero Scroll Indicator Optimizations */
+@media (width <= 768px) {
+  /* Ensure scroll indicator is visible on mobile */
+  .hero-container .absolute.bottom-8 {
+    bottom: 2rem; /* 32px - better positioning for mobile */
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  /* Add safe area support for scroll indicator */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  /* Make scroll indicator more visible on mobile */
+  .hero-container svg {
+    filter: drop-shadow(0 2px 4px rgb(0 0 0 / 30%));
+  }
+}
+
+/* Landscape Orientation Optimizations */
+@media (width <= 768px) and (orientation: landscape) {
+  .hero-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: -webkit-fill-available; /* iOS Safari fix */
+    height: 100vh;
+    height: 100dvh;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available; /* iOS Safari fix */
+  }
+
+  /* Adjust content positioning for landscape */
+  .hero-container > div:nth-child(2) {
+    padding: 0.5rem !important;
+    min-height: calc(100vh - 2rem);
+    min-height: calc(100dvh - 2rem);
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-buttons {
+    gap: 0.5rem;
+    max-width: 280px;
+  }
+
+  .mobile-menu-content {
+    max-width: 280px;
+  }
+
+  /* In landscape mode, move scroll indicator higher */
+  .hero-container .absolute.bottom-8 {
+    bottom: 1rem; /* 16px - less space needed in landscape */
+  }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (resolution >= 192dpi) {
+  /* Use the same image for retina displays since @2x version doesn't exist */
+  .hero-background {
+    background-image: url("/assets/hero-bg.webp");
+  }
+
+  /* Ensure crisp text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Accessibility Enhancements for Mobile */
+@media (width <= 768px) {
+  /* Enhanced focus states for mobile */
+  *:focus-visible {
+    outline: 3px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Better contrast for mobile viewing */
+  .text-muted-foreground {
+    color: hsl(220deg 8.9% 40%);
+  }
+
+  /* Larger tap targets for accessibility */
+  .accessibility-enhanced button,
+  .accessibility-enhanced a {
+    min-height: 56px;
+    min-width: 56px;
+    padding: 16px 20px;
+  }
+}
+
+/* Print Styles for Mobile */
+@media print {
+  .mobile-menu-overlay,
+  .mobile-menu-content,
+  .accessibility-toolbar {
+    display: none !important;
+  }
+
+  .mobile-optimized {
+    min-height: auto;
+    padding: 0;
+  }
+}
+
+/* Targeted Mobile Overflow Prevention */
+@media (width <= 768px) {
+  /* Hide scrollbars but keep scroll functionality */
+  html,
+  body,
+  #root {
+    overflow-x: hidden;
+    max-width: 100vw;
+
+    /* Hide vertical scrollbar on mobile */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  #root::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ensure scrolling still works smoothly */
+  html,
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ensure images don't cause overflow */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix text that might be too wide */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div,
+  span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}

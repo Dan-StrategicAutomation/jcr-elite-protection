@@ -1,0 +1,52 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield Background -->
+  <path d="M25 15 L35 10 L45 15 L45 35 C45 45 35 50 35 50 C35 50 25 45 25 35 Z" 
+        fill="url(#shieldGradient)" 
+        stroke="#1e40af" 
+        stroke-width="1"/>
+  
+  <!-- Crown on Shield -->
+  <path d="M30 20 L32 18 L35 22 L38 18 L40 20 L39 25 L31 25 Z" 
+        fill="#fbbf24" 
+        stroke="#f59e0b" 
+        stroke-width="0.5"/>
+  
+  <!-- JCR Letters in Shield -->
+  <text x="35" y="40" 
+        font-family="serif" 
+        font-size="8" 
+        font-weight="bold" 
+        text-anchor="middle" 
+        fill="white">JCR</text>
+  
+  <!-- Company Name -->
+  <text x="60" y="25" 
+        font-family="serif" 
+        font-size="16" 
+        font-weight="bold" 
+        fill="url(#textGradient)">JCR ELITE</text>
+  
+  <text x="60" y="42" 
+        font-family="serif" 
+        font-size="12" 
+        font-weight="normal" 
+        fill="url(#textGradient)">PROTECTION</text>
+  
+  <!-- Tagline -->
+  <text x="60" y="55" 
+        font-family="sans-serif" 
+        font-size="8" 
+        font-style="italic" 
+        fill="#64748b">London's Premier Security Services</text>
+</svg>

@@ -1,0 +1,26 @@
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8443:8443"
+    environment:
+      - PORT=8443
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "-k", "https://localhost:8443"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    volumes:
+      - ./public:/usr/share/nginx/html/public
+    # Add security limits
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE

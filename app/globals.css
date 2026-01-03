@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+    --mobile-padding: 1rem;
+    --mobile-margin: 0.75rem;
+    --touch-target-min: 44px;
+    --touch-target-comfortable: 48px;
+    --mobile-font-base: 16px;
+    --mobile-line-height: 1.5;
+    --safe-area-top: env(safe-area-inset-top, 0);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0);
+    --safe-area-left: env(safe-area-inset-left, 0);
+    --safe-area-right: env(safe-area-inset-right, 0);
+    --sidebar-background: hsl(var(--background));
+    --sidebar-foreground: hsl(var(--foreground));
+    --sidebar-primary: hsl(var(--primary));
+    --sidebar-primary-foreground: hsl(var(--primary-foreground));
+    --sidebar-accent: hsl(var(--accent));
+    --sidebar-accent-foreground: hsl(var(--accent-foreground));
+    --sidebar-border: hsl(var(--border));
+    --sidebar-ring: hsl(var(--ring));
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+
+    font-family: var(--font-inter), sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  /* Mobile-first viewport height utilities */
+  .min-h-screen-mobile {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .h-screen-mobile {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Safe area utilities */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left, 0);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right, 0);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 md:px-12 py-16 sm:py-20 md:py-24;
+  }
+
+  .nav-link {
+    @apply relative px-2 py-1 text-sm font-medium text-foreground transition-colors duration-300 hover:text-primary;
+  }
+
+  .nav-link::after {
+    content: "";
+
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .service-card {
+    @apply glass-card rounded-lg p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .hero-background {
+    background-image: url("/assets/hero-bg.webp");
+    background-position: center;
+  }
+
+  .profile-hero-bg {
+    background-image: url("https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1920&q=80");
+  }
+
+  .approach-hero-bg {
+    background-image: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80");
+  }
+
+  .button-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-lg hover:brightness-110 active:brightness-90;
+
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    touch-action: manipulation;
+  }
+
+  .button-secondary {
+    @apply bg-secondary text-foreground px-6 py-3 rounded-md font-medium transition-all duration-300 hover:bg-secondary/80;
+
+    min-height: var(--touch-target-comfortable);
+    min-width: var(--touch-target-comfortable);
+    touch-action: manipulation;
+  }
+
+  .animate-on-scroll {
+    @apply opacity-0;
+
+    transition: opacity 0.6s ease-out;
+  }
+
+  .animate-on-scroll.animated {
+    @apply opacity-100;
+  }
+
+  @keyframes fade-in-safe {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in-safe 0.6s ease-out forwards;
+  }
+
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-right {
+    animation: fade-in-right 0.6s ease-out forwards;
+  }
+
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-left {
+    animation: fade-in-left 0.6s ease-out forwards;
+  }
+
+  @keyframes subtle-pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-subtle-pulse {
+    animation: subtle-pulse 2s ease-in-out infinite;
+  }
+
+  .testimonial-card {
+    @apply glass-card rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg;
+  }
+
+  .form-input {
+    @apply w-full p-3 bg-white/50 backdrop-blur-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300;
+
+    font-size: var(--mobile-font-base);
+    line-height: var(--mobile-line-height);
+  }
+
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8;
+  }
+
+  .responsive-grid-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+  }
+
+  .responsive-grid-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .responsive-grid-5 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 sm:gap-8;
+  }
+}
+
+.dropdown-menu {
+  @apply bg-white/95 backdrop-blur-md shadow-lg border border-gray-100 rounded-md;
+
+  z-index: 50;
+}
+
+.dropdown-link {
+  @apply transition-all duration-200 hover:bg-primary/5 focus:bg-primary/10 focus:outline-none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(156 163 175 / 50%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(156 163 175 / 70%);
+}

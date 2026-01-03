@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "augment.vscode-augment",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "formulahendry.auto-rename-tag",
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-json",
+        "usernamehw.errorlens",
+        "gruntfuggly.todo-tree"
+    ]
+}

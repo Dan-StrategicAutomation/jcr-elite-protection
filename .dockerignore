@@ -1,0 +1,79 @@
+
+# Version control
+.git
+.gitignore
+.github
+
+# Node.js dependencies
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+bun.lockb
+
+# Build artifacts
+dist
+build
+coverage
+
+# Editor configs
+.idea
+.vscode
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Development and documentation files
+README.md
+*.md
+DEPENDENCY_AUDIT_REPORT.md
+Code_Refactoring_Plan.md
+Website_Improvement_Plan.md
+WEB3FORMS_SETUP.md
+
+# Development scripts
+update-footer.sh
+# Note: docker-entrypoint.sh is needed for production, so we exclude specific dev scripts instead of *.sh
+
+# Configuration files not needed in production
+.eslintrc*
+.prettierrc*
+.stylelintrc*
+eslint.config.js
+prettier.config.js
+stylelint.config.js
+components.json
+
+# TypeScript config files (not needed in production)
+tsconfig*.json
+
+# Development-only PostCSS files
+postcss-critical.js
+
+# Test files
+**/*.test.*
+**/*.spec.*
+__tests__
+test
+tests
+
+# Husky and lint-staged (development only)
+.husky
+
+# Cloud build config (not needed in container)
+cloudbuild.yaml
+
+# Docker files (not needed inside container)
+Dockerfile
+docker-compose.yml
+.dockerignore

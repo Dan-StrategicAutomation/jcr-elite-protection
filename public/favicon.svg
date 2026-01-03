@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" role="img" aria-label="Shield favicon">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1a3a"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield silhouette (emoji-inspired) -->
+  <path d="M6 4 L12 2 L18 4 V13c0 5-6 9-6 9s-6-4-6-9V4z" fill="url(#g)"/>
+  <!-- Center star for clarity at small sizes -->
+  <path d="M12 8.6l1.05 2.13 2.35.34-1.7 1.64.4 2.34L12 14.3l-2.1 1.15.4-2.34-1.7-1.64 2.35-.34z" fill="#ffffff"/>
+</svg>
